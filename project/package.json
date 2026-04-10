@@ -1,0 +1,17 @@
+{
+  "name": "smart-contact-ai-demo",
+  "version": "2.0.0",
+  "description": "Educational demo for Unit 4: AI in Frontend/Backend websites — with SQLite storage, new intents, entity extraction, and UI enhancements",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "sql.js": "^1.12.0",
+    "ws": "^8.18.1"
+  }
+}

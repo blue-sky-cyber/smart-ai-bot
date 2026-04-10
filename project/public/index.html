@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartFlow AI | منصة إدارة التواصل الذكي</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">الجيل القادم من حلول خدمة العملاء</p>
+      <h1>نظام SmartFlow لتحليل وتوجيه استفسارات العملاء آلياً</h1>
+      <p class="lead">
+        ارتقِ بتجربة عملائك عبر منصة ذكية تقوم بتحليل النيات، استخراج البيانات الهامة، 
+        وأتمتة الردود والمهام لحظياً باستخدام تقنيات معالجة اللغات الطبيعية.
+      </p>
+      <div class="hero-actions">
+        <button id="pingBtn" class="btn primary">التحقق من حالة النظام</button>
+        <span id="pingStatus" class="status-pill">متصل</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="metric"><strong>Smart</strong><span>تحليل النيات والكيانات</span></div>
+      <div class="metric"><strong>Live</strong><span>تحديثات WebSocket فورية</span></div>
+      <div class="metric"><strong>Secure</strong><span>تخزين SQLite منظم</span></div>
+      <div class="metric"><strong>UX</strong><span>واجهة تفاعلية متطورة</span></div>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel">
+      <h2>1) بوابة استقبال الطلبات</h2>
+      <form id="contactForm" class="stack">
+        <label>اسم العميل
+          <input type="text" id="name" placeholder="مثال: خالد منصور" />
+        </label>
+        <label>البريد الإلكتروني المعتمد
+          <input type="email" id="email" placeholder="client@example.com" />
+        </label>
+        <label>موضوع الاستفسار
+          <input type="text" id="topic" placeholder="وصف مختصر للطلب" />
+        </label>
+        <label>نص الرسالة الواردة
+          <textarea id="message" rows="7" placeholder="أدخل محتوى رسالة العميل للتحليل..."></textarea>
+        </label>
+        <button class="btn primary" type="submit">بدء المعالجة الذكية</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>2) مركز معالجة البيانات</h2>
+
+      <!-- بطاقة الرد المقترح -->
+      <div id="suggestedReplyCard" class="reply-card" style="display:none;">
+        <div class="reply-card-header">
+          <span class="reply-label">الاستجابة الذكية المقترحة</span>
+          <div class="reply-actions">
+            <button id="copyReplyBtn" class="btn secondary small" title="نسخ الرد المقترح">
+              📋 نسخ للاستخدام
+            </button>
+            <button id="openTicketBtn" class="btn support small" title="فتح تذكرة دعم">
+              🎫 أتمتة تذكرة دعم
+            </button>
+          </div>
+        </div>
+        <p id="suggestedReplyText" class="reply-text"></p>
+        <div id="copyFeedback" class="copy-feedback" style="display:none;">✅ تم نسخ الرد بنجاح!</div>
+      </div>
+
+      <!-- بطاقة الكيانات المستخرجة -->
+      <div id="entitiesCard" class="entities-card" style="display:none;">
+        <div class="entities-header">البيانات والكيانات المستخرجة</div>
+        <div id="entitiesList" class="entities-list"></div>
+      </div>
+
+      <!-- بطاقة التذكرة -->
+      <div id="ticketCard" class="ticket-card" style="display:none;">
+        <div class="ticket-header">🎫 تفاصيل تذكرة الدعم الآلية</div>
+        <div id="ticketContent" class="ticket-content"></div>
+        <button id="closeTicketBtn" class="btn secondary small">إغلاق المعاينة</button>
+      </div>
+
+      <pre id="analysisOutput" class="code-box">سجل المعالجة التقني (JSON Log) سيظهر هنا...</pre>
+    </section>
+
+    <section class="panel chat-panel">
+      <h2>3) مساعد الدردشة التفاعلي</h2>
+      <div id="wsLog" class="mini-log">في انتظار الاتصال بالقناة اللحظية...</div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <form id="chatForm" class="chat-form">
+        <input type="text" id="chatInput" placeholder="اسأل المساعد عن أفضل رد لهذه الحالة..." />
+        <button class="btn" type="submit">إرسال</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>4) أرشيف المحادثات والذاكرة</h2>
+      <button id="historyBtn" class="btn secondary">مزامنة السجل من قاعدة البيانات</button>
+      <pre id="historyOutput" class="code-box">أرشيف الجلسة الحالية سيظهر هنا...</pre>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>نظام SmartFlow AI — حلول ذكية لإدارة التواصل الرقمي 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
